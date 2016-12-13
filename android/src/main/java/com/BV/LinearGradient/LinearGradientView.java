@@ -1,7 +1,6 @@
 package com.BV.LinearGradient;
 
 import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.uimanager.PixelUtil;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -58,17 +57,6 @@ public class LinearGradientView extends View {
             _locations[i] = (float) locations.getDouble(i);
         }
         mLocations = _locations;
-        drawGradient();
-    }
-
-    public void setBorderRadii(ReadableArray borderRadii) {
-        float[] _radii = new float[borderRadii.size()];
-        for (int i=0; i < _radii.length; i++)
-        {
-            _radii[i] = PixelUtil.toPixelFromDIP((float) borderRadii.getDouble(i));
-        }
-        mBorderRadii = _radii;
-        updatePath();
         drawGradient();
     }
 
